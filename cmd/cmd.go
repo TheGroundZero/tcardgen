@@ -195,7 +195,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 		return err
 	}
 	/* Category */
-	if cnf.Category.Enabled {
+	if *cnf.Category.Enabled {
 		if err := c.DrawTextAtPoint(
 			strings.ToUpper(fm.Category),
 			*cnf.Category.Start,
@@ -206,7 +206,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 		}
 	}
 	/* Info */
-	if cnf.Info.Enabled {
+	if *cnf.Info.Enabled {
 		if err := c.DrawTextAtPoint(
 			fmt.Sprintf("%s%s%s", fm.Author, cnf.Info.Separator, fm.Date.Format(cnf.Info.TimeFormat)),
 			*cnf.Info.Start,
@@ -217,7 +217,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 		}
 	}
 	/* Tags */
-	if cnf.Tags.Enabled {
+	if *cnf.Tags.Enabled {
 		if err := c.DrawBoxTexts(
 			tags,
 			*cnf.Tags.Start,
@@ -232,7 +232,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 		}
 	}
 	/* Series */
-	if cnf.Series.Enabled {
+	if *cnf.Series.Enabled {
 		if err := c.DrawTextAtPoint(
 			strings.ToUpper(fm.Series),
 			*cnf.Series.Start,
