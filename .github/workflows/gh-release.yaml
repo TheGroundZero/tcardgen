@@ -68,7 +68,7 @@ jobs:
           go-version: 1.23
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v
+        uses: goreleaser/goreleaser-action@v6
         with:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
