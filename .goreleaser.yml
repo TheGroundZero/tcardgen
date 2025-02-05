@@ -1,24 +1,27 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+
 version: 2
 
 before:
   hooks:
+    # You may remove this if you don't use go modules.
     - go mod tidy
+    # you may remove this if you don't need go generate
+    - go generate ./...
 
 builds:
-  - id: tcardgen
-    binary: tcardgen
-    main: .
-    env:
+  - env:
       - CGO_ENABLED=0
     goos:
       - linux
+      - windows
       - darwin
     goarch:
       - amd64
       - arm64
 
 archives:
-  - format: tar.gz
+  - formats: [ 'tar.gz' ]
     # this name template makes the OS and Arch compatible with the results of `uname`.
     name_template: >-
       {{ .ProjectName }}_
@@ -30,14 +33,11 @@ archives:
     # use zip for windows archives
     format_overrides:
       - goos: windows
-        format: zip
-
-brews:
-- name: tcardgen
-  repository:
-    owner: Ladicle
-    name: homebrew-tap
-    token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+        formats: [ 'zip' ]
 
 changelog:
-  disable: true
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
