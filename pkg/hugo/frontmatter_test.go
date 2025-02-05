@@ -22,7 +22,7 @@ func TestParseFrontMatterFromReader(t *testing.T) {
 			desc: "Parse YAML front matter",
 			input: `---
 title: "HugoでもTwitterCardを自動生成したい"
-author: ["@Ladicle"]
+author: ["@TheGroundZero"]
 date: 2020-06-21T03:56:24+09:00
 tags: ["hugo", "go", "OGP"]
 categories: ["program"]
@@ -31,7 +31,7 @@ series: "Example blog posts"
 content`,
 			expectFM: &FrontMatter{
 				Title:    "HugoでもTwitterCardを自動生成したい",
-				Author:   "@Ladicle",
+				Author:   "@TheGroundZero",
 				Category: "program",
 				Tags:     []string{"hugo", "go", "OGP"},
 				Date:     mustParseRFC3339(t, "2020-06-21T03:56:24+09:00"),
@@ -42,7 +42,7 @@ content`,
 			desc: "Parse TOML front matter",
 			input: `+++
 title = "HugoでもTwitterCardを自動生成したい"
-author = ["@Ladicle"]
+author = ["@TheGroundZero"]
 date = "2020-06-21T03:56:24+09:00"
 tags = ["hugo", "go", "OGP"]
 categories = ["program"]
@@ -51,7 +51,7 @@ series = "Example blog posts"
 content`,
 			expectFM: &FrontMatter{
 				Title:    "HugoでもTwitterCardを自動生成したい",
-				Author:   "@Ladicle",
+				Author:   "@TheGroundZero",
 				Category: "program",
 				Tags:     []string{"hugo", "go", "OGP"},
 				Date:     mustParseRFC3339(t, "2020-06-21T03:56:24+09:00"),
@@ -72,7 +72,7 @@ title = "invalid format'
 		{
 			desc: "Title is missing",
 			input: `+++
-author = ["@Ladicle"]
+author = ["@TheGroundZero"]
 +++`,
 			expectErr: NewFMNotExistError(fmTitle),
 		},
@@ -94,7 +94,7 @@ title = "Title"
 			desc: "Category is empty",
 			input: `+++
 title = "Title"
-author = ["@Ladicle"]
+author = ["@TheGroundZero"]
 categories = [""]
 +++`,
 			expectErr: NewFMNotExistError(fmCategories),
@@ -103,7 +103,7 @@ categories = [""]
 			desc: "Tag is missing",
 			input: `+++
 title = "Title"
-author = ["@Ladicle"]
+author = ["@TheGroundZero"]
 categories = ["Program"]
 +++`,
 			expectErr: NewFMNotExistError(fmTags),
@@ -112,13 +112,13 @@ categories = ["Program"]
 			desc: "When time is missing, default time is now",
 			input: `+++
 title = "Title"
-author = ["@Ladicle"]
+author = ["@TheGroundZero"]
 categories = ["cat11"]
 tags = ["tag1"]
 +++`,
 			expectFM: &FrontMatter{
 				Title:    "Title",
-				Author:   "@Ladicle",
+				Author:   "@TheGroundZero",
 				Category: "cat11",
 				Tags:     []string{"tag1"},
 				Date:     currentTime,

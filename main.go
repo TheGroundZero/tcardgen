@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/Ladicle/tcardgen/cmd"
+	"github.com/TheGroundZero/tcardgen/cmd"
 )
 
 func main() {

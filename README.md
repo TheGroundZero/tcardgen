@@ -11,19 +11,19 @@ Also, both toml and yaml formats are supported.
 ### Homebrew
 
 ```bash
-brew install Ladicle/tap/tcardgen
+brew install TheGroundZero/tap/tcardgen
 ```
 
 ### Go version < 1.16
 
 ```bash
-go get github.com/Ladicle/tcardgen@latest
+go get github.com/TheGroundZero/tcardgen@latest
 ```
 
 ### Go 1.16+
 
 ```bash
-go install github.com/Ladicle/tcardgen@latest
+go install github.com/TheGroundZero/tcardgen@latest
 ```
 
 ## Getting Started

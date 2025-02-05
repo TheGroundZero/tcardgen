@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/Ladicle/tcardgen/pkg/canvas/box"
-	"github.com/Ladicle/tcardgen/pkg/canvas/fontfamily"
+	"github.com/TheGroundZero/tcardgen/pkg/canvas/box"
+	"github.com/TheGroundZero/tcardgen/pkg/canvas/fontfamily"
 )
 
 const DefaultTemplate = "example/template.png"
