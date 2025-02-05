@@ -1,4 +1,4 @@
-module github.com/Ladicle/tcardgen
+module github.com/TheGroundZero/tcardgen
 
 go 1.23
 

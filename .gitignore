@@ -5,3 +5,5 @@ tcardgen
 *.ttf
 !example/*.png
 test/*.png
+# Added by goreleaser init:
+dist/
