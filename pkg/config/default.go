@@ -24,7 +24,6 @@ var defaultCnf = DrawingConfig{
 		FgHexColor: "#8D8D8D",
 		FontSize:   42,
 		FontStyle:  fontfamily.Regular,
-		Enabled:    true,
 	},
 	Info: &TextOption{
 		Enabled:    ptrBool(true),
@@ -34,7 +33,6 @@ var defaultCnf = DrawingConfig{
 		FontStyle:  fontfamily.Regular,
 		Separator:  "・",
 		TimeFormat: "Jan 2",
-		Enabled:    true,
 	},
 	Tags: &BoxTextsOption{
 		Enabled:    ptrBool(true),
@@ -49,14 +47,13 @@ var defaultCnf = DrawingConfig{
 		BoxPadding: &Padding{Top: 6, Right: 10, Bottom: 6, Left: 10},
 		BoxSpacing: ptrInt(6),
 		BoxAlign:   box.AlignRight,
-		Enabled:    true,
 	},
 	Series: &TextOption{
+		Enabled:    ptrBool(false),
 		Start:      &Point{X: 126, Y: 119},
 		FgHexColor: "#8D8D8D",
 		FontSize:   42,
 		FontStyle:  fontfamily.Regular,
-		Enabled:    false,
 	},
 }
 
