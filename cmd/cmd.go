@@ -10,6 +10,9 @@ import (
 	"strings"
 	"time"
 
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
+
 	"github.com/spf13/cobra"
 
 	"github.com/TheGroundZero/tcardgen/pkg/canvas"
@@ -180,7 +183,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 	}
 
 	for _, t := range fm.Tags[:lim] {
-		tags = append(tags, strings.Title(t))
+		tags = append(tags, cases.Title(language.Und).String(t))
 	}
 
 	/* Title */
@@ -197,7 +200,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 	/* Category */
 	if *cnf.Category.Enabled {
 		if err := c.DrawTextAtPoint(
-			strings.ToUpper(fm.Category),
+			cases.Upper(language.Und).String(fm.Category),
 			*cnf.Category.Start,
 			canvas.FgHexColor(cnf.Category.FgHexColor),
 			canvas.FontFaceFromFFA(ffa, cnf.Category.FontStyle, cnf.Category.FontSize),
@@ -234,7 +237,7 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 	/* Series */
 	if *cnf.Series.Enabled {
 		if err := c.DrawTextAtPoint(
-			strings.ToUpper(fm.Series),
+			cases.Upper(language.Und).String(fm.Series),
 			*cnf.Series.Start,
 			canvas.FgHexColor(cnf.Series.FgHexColor),
 			canvas.FontFaceFromFFA(ffa, cnf.Series.FontStyle, cnf.Series.FontSize),
