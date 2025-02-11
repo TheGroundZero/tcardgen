@@ -42,9 +42,7 @@ tcardgen --config=config.yaml example/*.md`
 
 var (
 	// set values via build flags
-	command string
 	version string
-	commit  string
 )
 
 type IOStreams struct {
