@@ -231,6 +231,17 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 			return err
 		}
 	}
+	/* Series */
+	if *cnf.Series.Enabled {
+		if err := c.DrawTextAtPoint(
+			strings.ToUpper(fm.Series),
+			*cnf.Series.Start,
+			canvas.FgHexColor(cnf.Series.FgHexColor),
+			canvas.FontFaceFromFFA(ffa, cnf.Series.FontStyle, cnf.Series.FontSize),
+		); err != nil {
+			return err
+		}
+	}
 
 	return c.SaveAsPNG(outPath)
 }
