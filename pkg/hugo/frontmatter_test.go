@@ -63,7 +63,7 @@ content`,
 			input: `---
 title = "invalid format'
 ---`,
-			expectErr: errors.New("failed to unmarshal YAML: yaml: unmarshal errors:\n  line 1: cannot unmarshal !!str `title =...` into map[string]interface {}"),
+			expectErr: errors.New("\"_stream.yaml:1:1\": failed to unmarshal YAML: yaml: unmarshal errors:\n  line 1: cannot unmarshal !!str `title =...` into map[string]interface {}"),
 		},
 		{
 			desc: "Title is missing",
