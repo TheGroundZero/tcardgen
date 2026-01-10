@@ -11,6 +11,8 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 
 	"github.com/Ladicle/tcardgen/pkg/canvas"
 	"github.com/Ladicle/tcardgen/pkg/canvas/fontfamily"
@@ -174,8 +176,9 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 	}
 
 	var tags []string
+	titleCaser := cases.Title(language.Und)
 	for _, t := range fm.Tags {
-		tags = append(tags, strings.Title(t))
+		tags = append(tags, titleCaser.String(t))
 	}
 
 	/* Title */
