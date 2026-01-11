@@ -39,12 +39,8 @@ tcardgen --template=example/template.png example/*.md
 tcardgen --config=config.yaml example/*.md`
 )
 
-var (
-	// set values via build flags
-	command string
-	version string
-	commit  string
-)
+// set values via build flags
+var version string
 
 type IOStreams struct {
 	Out    io.Writer
