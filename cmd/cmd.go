@@ -14,6 +14,8 @@ import (
 	"golang.org/x/text/language"
 
 	"github.com/spf13/cobra"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 
 	"github.com/TheGroundZero/tcardgen/pkg/canvas"
 	"github.com/TheGroundZero/tcardgen/pkg/canvas/fontfamily"
