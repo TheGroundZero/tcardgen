@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 
 version: 2
+project_name: tcardgen
 
 before:
   hooks:
@@ -12,6 +13,9 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+      - -X github.com/Ladicle/tcardgen/cmd.version={{.Version}}
     goos:
       - linux
       - windows
