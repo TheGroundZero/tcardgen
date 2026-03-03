@@ -7,3 +7,6 @@ tcardgen
 test/*.png
 # Added by goreleaser init:
 dist/
+# specific to repo owner
+.github/FUNDING.yml
+.github/CODEOWNERS
