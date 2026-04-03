@@ -38,6 +38,7 @@ var defaultCnf = DrawingConfig{
 		Enabled:          ptrBool(true),
 		Limit:            0,
 		TitleCaseEnabled: ptrBool(true),
+		MoreTags:         ptrBool(false),
 		TextOption: TextOption{
 			Start:      &Point{X: 1025, Y: 451},
 			FgHexColor: "#FFFFFF",
