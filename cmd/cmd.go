@@ -10,9 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
-
 	"github.com/spf13/cobra"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
