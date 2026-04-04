@@ -10,9 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
-
 	"github.com/spf13/cobra"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
@@ -187,6 +184,10 @@ func generateTCard(streams IOStreams, contentPath, outPath string, tpl image.Ima
 			t = strings.Title(t)
 		}
 		tags = append(tags, t)
+	}
+
+	if len(fm.Tags) > lim && *cnf.Tags.MoreTags {
+		tags = append(tags, "More...")
 	}
 
 	/* Title */
